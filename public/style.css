@@ -1,0 +1,69 @@
+.Head {
+  color: white;
+  background-color: #05386b;
+  padding-bottom: 20px;
+  margin-bottom: 12px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.search-fields select {
+  padding: 10px 8px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#search-fields {
+  display: grid;
+  padding: 36px 0px;
+}
+#search-fields select {
+  padding: 12px 10px;
+  min-width: 25%;
+}
+
+#search-fields button {
+  background-color: aquamarine;
+  padding: 20px 12px;
+  font-size: medium;
+  border: 0px transparent;
+  margin-top: 18px;
+  border-radius: 20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+@media screen and (orientation: potrait) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+table thead th {
+  padding: 16px 14px;
+}
+
+table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid gray;
+}
+.search-fields {
+  padding: 16px 8px;
+}
+.py-5 {
+  margin: 20px 20px 20px 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .Main {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
