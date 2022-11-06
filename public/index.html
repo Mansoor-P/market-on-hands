@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Market On Hands</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../src/style.css">
   <style>
     .column {
       float: left;
@@ -88,19 +88,19 @@
         <div class="card">
           <div>
             <label for="State">State</label>
-            <select name="" id="State" class="form-control">
+            <select name="" id="State" class="form-select" onchange="onStateChanged(value)">
               <option value="">Andaman nicobar</option>
             </select>
           </div>
           <div>
             <label for="District">District</label>
-            <select name="" id="District" class="form-control"></select>
+            <select name="" id="District" class="form-select" onchange="onDistrictSelected(value)"></select>
           </div>
           <div>
             <label for="Market">Market</label>
-            <select name="" id="Market" class="form-control"></select>
+            <select name="" id="Market" class="form-select"></select>
           </div>
-          <button class="btn btn-primary mt-3">Search</button>
+          <button class="btn btn-primary mt-3" onclick="displayCommodities()">Search</button>
         </div>
 
       </div>
@@ -135,7 +135,9 @@
       </ul>
       <p class="text-center text-muted"></p>
     </footer>
-
+    <script src="../src/data/states.js"></script>
+    <script src="../src/builder.js"></script>
+    <script src="../src/script.js"></script>
 </body>
 
 </html>
