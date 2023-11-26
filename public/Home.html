@@ -1,48 +1,153 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-    <title>Start</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-image: url('../public/Images/home page bg.jpg');
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Large screens */
+        .landing-section {
+            background-image: url('./Images/ali-mkumbwa-XzgW_vYpm8M-unsplash.jpg');
+        }
+
+        /* medium screens */
+        @media only screen and (max-width: 992px) {
+            .landing-section {
+                background-image: url('./Images/pete-owen-QUQ53Qkmul0-unsplash.jpg');
+            }
+        }
+        /* Small  screens */
+        @media only screen and (max-width: 550px) {
+            .landing-section {
+                background-image: url('./Images/sleeba-thomas-ORhfgctTTAI-unsplash.jpg');
+            }
+        }
+
+        .landing-section {
+            /* background-image: url('./Images/sleeba-thomas-ORhfgctTTAI-unsplash.jpg'); */
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-
+            color: white;
+            padding: 100px 0;
+            text-align: center;
         }
 
-        .glass {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: azure;
+        .landing-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .landing-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .landing-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+
+        .container {
+            max-width: 90%;
+            margin: 50px auto;
+        }
+
+        .info-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .info-paragraph a {
+            color: #007bff;
+            text-decoration: underline;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .info-paragraph a:hover {
+            color: #0056b3;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <div class="px-4 py-5  text-center glass m-5">
-        <img class="d-block mx-auto mb-4"
-            src="../public/Images/round-user-icon-isolated-white-background-black-white-3d-rendering_63135-3893.webp"
-            alt="" width="100" height="100">
 
-        <h1 class="display-5 fw-bold">Market On Hands</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Search Vegitables Price Market wise in Pan INDIA </p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a href="index.html" class="btn btn-primary">Search</a>
+    <section class="landing-section">
+        <div class="container-fluid">
+            <div class="landing-content">
+                <h1>Welcome to Fresh Market</h1>
+                <p>Discover a variety of fresh fruits and vegetables with transparent pricing.</p>
+                <a href="./index.html" class="btn btn-custom">Serch</a>
             </div>
         </div>
+    </section>
+    <div class="container">
+        <p class="info-paragraph">Market On Hands is your go-to platform for accessing real-time information on the
+            current daily prices of a diverse range of commodities from various markets (Mandi) across India. Our
+            mission is to empower consumers and businesses alike by providing transparent and up-to-date data, allowing
+            you to make well-informed decisions about vegetable prices in your region.
+
+            We understand the importance of reliable pricing information when it comes to planning your purchases or
+            managing your business. Whether you're a household shopper or a business owner, Market On Hands is designed
+            to cater to your specific needs, offering a comprehensive overview of market trends and fluctuations.
+
+            The data we present is meticulously sourced from the <a
+                href="https://data.gov.in/apis/9ef84268-d588-465a-a308-a864a43d0070" target="_blank"
+                style="font-weight: bold; color: #28a745;">Current Daily Price Of Various Commodities From Various
+                Markets (Mandi)</a> API, a trusted resource provided by the <a href="https://data.gov.in/"
+                target="_blank" style="font-weight: bold; color: #28a745;">Open Government Data Platform(OGD) India</a>.
+            This ensures the accuracy and reliability of the information you find on our platform.
+
+            Whether you are planning your grocery shopping, running a local market stall, or managing a restaurant's
+            supply chain, Market On Hands is your partner in navigating the dynamic landscape of commodity prices. Our
+            user-friendly interface and regularly updated data make us a valuable resource for anyone seeking to stay
+            ahead in the market.
+
+            Should you have any questions or need further clarification, we encourage you to reach out through our <a
+                href="https://data.gov.in/" target="_blank" style="color: #28a745;">official link</a>. Your satisfaction
+            and trust are our top priorities, and we are committed to providing a seamless and enriching experience as
+            you explore the diverse world of market prices on Market On Hands.</p>
     </div>
+
+    <footer>
+        <p>&copy; 2023 Market On Hands. All rights reserved.</p>
+    </footer>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
