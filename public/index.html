@@ -1,143 +1,130 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Market On Hands</title>
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="../src/style.css">
-  <style>
-    .column {
-      float: left;
-      width: 25%;
-      padding: 0 10px;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
 
-    .row {
-      margin: 0 -5px;
-    }
+        .header {
+            background-color: darkcyan;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #fff;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
 
-    .table {
-      margin-top: 20px;
-    }
+        .table {
+            border: 1px solid #dee2e6;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
 
-    @media screen and (max-width: 600px) {
-      .column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-      }
-    }
+        th {
+            background-color: darkcyan;
+            color: white;
+        }
 
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      padding: 16px;
-      text-align: center;
-      background-color: #f1f1f1;
-      margin-top: 20px;
+        .btn-primary {
+            background-color: darkcyan;
+            border: none;
+        }
 
-    }
-
-    .header {
-      text-align: center;
-      background-color: darkcyan;
-      color: white;
-      font-size: large;
-
-      font-family: 'Times New Roman', Times, serif;
-      padding-top: 20px;
-      padding-bottom: 15px;
-    }
-
-    .table {
-      border: 1px solid gray;
-      min-height: 40%;
-    }
-
-    th {
-      padding: 10px 16px;
-    }
-  </style>
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <nav class="header">
-      <div class="container-fluid">
-        <h1>Market On Hands</h1>
-        <p>Search Vegitables Price Market wise in Pan INDIA</p>
-      </div>
-      <p style="text-align: right;
-      font-size:medium;" id="last-update-date">Last Updated On : </p>
-    </nav>
-  </header>
-
-  <div class="container">
-
-    <div class="row">
-      <div class="column col-3">
-        <div class="card">
-          <div>
-            <label for="State">State</label>
-            <select name="" id="State" class="form-select" onchange="onStateChanged(value)">
-              <option value="">Andaman nicobar</option>
-            </select>
-          </div>
-          <div>
-            <label for="District">District</label>
-            <select name="" id="District" class="form-select" onchange="onDistrictSelected(value)"></select>
-          </div>
-          <div>
-            <label for="Market">Market</label>
-            <select name="" id="Market" class="form-select"></select>
-          </div>
-          <button class="btn btn-primary mt-3" onclick="displayCommodities()">Search</button>
+    <header class="header">
+        <div class="container-fluid">
+            <h1>Market On Hands</h1>
+            <p class="text-white">Search Vegetables Price Market-wise in Pan INDIA</p>
         </div>
+        <p style="text-align: right; font-size: medium;" id="last-update-date">Last Updated On : </p>
+    </header>
 
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-3">
+                <div class="card">
+                    <div>
+                        <label for="State">State</label>
+                        <select name="" id="State" class="form-control" onchange="onStateChanged(value)">
+                            <option value="">Andaman and Nicobar</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div>
+                        <label for="District">District</label>
+                        <select name="" id="District" class="form-control" onchange="onDistrictSelected(value)"></select>
+                    </div>
+                    <div>
+                        <label for="Market">Market</label>
+                        <select name="" id="Market" class="form-control"></select>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="displayCommodities()">Search</button>
+                </div>
+            </div>
 
-
-      <div class="col-9">
-        <table class=" table  table-responsive table-hover" id="commodities-host">
-
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Varieity</th>
-            <th scope="col">Min Price</th>
-            <th scope="col">Max Price</th>
-            <th scope="col">Modal</th>
-            <th scope="col">Arival Date</th>
-
-          </tr>
-          <tbody id="commodities-list">
-          </tbody>
-        </table>
-      </div>
+            <div class="col-md-12 col-lg-9">
+                <table class="table table-responsive table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Variety</th>
+                            <th scope="col">Min Price</th>
+                            <th scope="col">Max Price</th>
+                            <th scope="col">Modal</th>
+                            <th scope="col">Arrival Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="commodities-list">
+                        <!-- Add dynamic content here if needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <footer class="py-3 my-4">
-      <p class="text-center text-muted">The above data is fetched from API <a
-          href="https://data.gov.in/apis/9ef84268-d588-465a-a308-a864a43d0070">Current Daily Price Of Various
-          Commodities From Various Markets (Mandi)</a> provided by the <a href="https://data.gov.in/">Open Government
-          Data Platform(OGD) India</a>.</p>
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="Home.html" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-      </ul>
-      <p class="text-center text-muted"></p>
+    <footer class="py-3 my-4 text-center">
+        <p class="text-muted">The above data is fetched from API <a
+                href="https://data.gov.in/apis/9ef84268-d588-465a-a308-a864a43d0070">Current Daily Price Of Various
+                Commodities From Various Markets (Mandi)</a> provided by the <a href="https://data.gov.in/">Open
+            Government Data Platform(OGD) India</a>.</p>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="Home.html" class="nav-link text-white">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">About</a></li>
+        </ul>
+        <p class="text-muted"></p>
     </footer>
+
+    <!-- Add Bootstrap JS -->
     <script src="../src/data/states.js"></script>
     <script src="../src/builder.js"></script>
     <script src="../src/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
